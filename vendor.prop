@@ -81,9 +81,6 @@ drm.service.enabled=true
 # Frp
 ro.frp.pst=/dev/block/bootdevice/by-name/config
 
-# HEH filename encryption is being dropped
-ro.crypto.volume.filenames_mode=aes-256-cts
-
 # Media
 debug.stagefright.omx_default_rank=0
 vendor.vidc.disable.split.mode=1
@@ -133,3 +130,11 @@ ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0
 
 # Cached app compaction
 persist.device_config.activity_manager.use_compaction=true
+
+# fixup oom kill
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heapgrowthlimit=256m
+dalvik.vm.heapsize=512m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=4m
+dalvik.vm.heapmaxfree=8m
